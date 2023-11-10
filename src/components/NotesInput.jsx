@@ -6,7 +6,8 @@ class NotesInput extends React.Component {
 
     this.state = {
       title: "",
-      content: "",
+      body: "",
+      createdAt: +new Date(),
       charLimit: 50,
     };
 
@@ -40,11 +41,13 @@ class NotesInput extends React.Component {
     this.props.addNote(this.state);
   }
 
+  
+
   render() {
     const characterLimit = this.state.charLimit - this.state.title.length;
 
     return (
-      <div className="note-input">
+      <form className="note-input" onSubmit={this.onSubmitHandler}>
         <h1>Make your Notes</h1>
         <p className="note-input__title__char-limit">
           Character limit: {characterLimit}
@@ -56,6 +59,7 @@ class NotesInput extends React.Component {
             onChange={this.onTitleChangeHandler}
             placeholder="Input Title Here..."
             className="note-input__title"
+            required
           />
           <textarea
             id="content"
@@ -63,9 +67,10 @@ class NotesInput extends React.Component {
             onChange={this.onContentChangeHandler}
             placeholder="Input Content Here..."
             className="note-input__body"
+            required
           ></textarea>
-        <button onClick={this.onSubmitHandler}>Save</button>
-      </div>
+        <button className="save-button">Save</button>
+      </form>
     );
   }
 }

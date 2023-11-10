@@ -7,7 +7,7 @@ function NotesItem({ title, createdAt, body, id, onDelete, onArchive, archived }
   return (
     <div className="note-item">
       <div className="note-item__content">
-        <h2 className="note-item__title">{title}</h2>
+        <h3 className="note-item__title">{title}</h3>
         <p className="note-item__date">{showFormattedDate(createdAt)}</p>
         <p className="note-item__body">{body}</p>
       </div>

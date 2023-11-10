@@ -20,8 +20,8 @@ class NotesSearch extends React.Component{
 
     render(){
         return(
-            <div className='notes-search'>
-                <input type='text' placeholder='Search...' value={this.state.search} onChange={this.onSearchChange}/>
+            <div className='note-search'>
+                <input type='text' placeholder='Search Notes Here...' value={this.state.search} onChange={this.onSearchChange}/>
             </div>
         );
     }
